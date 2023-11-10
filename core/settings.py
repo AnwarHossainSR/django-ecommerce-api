@@ -26,6 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
+    'drf_spectacular',
+    # Local apps
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -110,3 +115,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CORS
+CORS_ORIGIN_ALLOW_ALL = True
+
+# REST FRAMEWORK
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+# DRF Spectacular
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Ecommerce API",
+    "DESCRIPTION": "An Ecommerce API built using Django Rest Framework",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
